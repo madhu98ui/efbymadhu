@@ -1,27 +1,7 @@
-// Travel images
-import travelImage3 from '../images/travel/travelimage3.jpg';
-import travelImage4 from '../images/travel/travelimage4.jpg';
-import travelImage6 from '../images/travel/travelimage6.jpg';
-import travelImage7 from '../images/travel/travelimage7.jpg';
-import travelImage16 from '../images/travel/travelimage16.jpg';
-import travelImage20 from '../images/travel/travelimage20.jpg';
-import travelImage22 from '../images/travel/travelimage22.jpg';
-
-// Wallpaper images
-import wallpaperImage2 from '../images/wallpaper/wallpaperimage2.jpg';
-import wallpaperImage3 from '../images/wallpaper/wallpaperimage3.jpg';
-import wallpaperImage6 from '../images/wallpaper/wallpaperimage6.jpg';
-import wallpaperImage9 from '../images/wallpaper/wallpaperimage9.jpg';
-import wallpaperImage10 from '../images/wallpaper/wallpaperimage10.jpg';
-import wallpaperImage11 from '../images/wallpaper/wallpaperimage11.jpg';
-import wallpaperImage12 from '../images/wallpaper/wallpaperimage12.jpg';
-import wallpaperImage13 from '../images/wallpaper/wallpaperimage13.jpg';
-import wallpaperImage14 from '../images/wallpaper/wallpaperimage14.jpg';
-
 export const photos = [
   {
     id: '1',
-    src: travelImage3,
+    src: '/images/travel/travelimage3.jpg',
     alt: 'Travel photograph - destination 1',
     title: 'Journey Begins',
     category: 'Travel',
@@ -30,7 +10,7 @@ export const photos = [
   },
   {
     id: '2',
-    src: travelImage4,
+    src: '/images/travel/travelimage4.jpg',
     alt: 'Travel photograph - destination 2',
     title: 'New Horizons',
     category: 'Travel',
@@ -39,7 +19,7 @@ export const photos = [
   },
   {
     id: '3',
-    src: travelImage6,
+    src: '/images/travel/travelimage6.jpg',
     alt: 'Travel photograph - destination 3',
     title: 'Wanderlust',
     category: 'Travel',
@@ -48,7 +28,7 @@ export const photos = [
   },
   {
     id: '4',
-    src: travelImage7,
+    src: '/images/travel/travelimage7.jpg',
     alt: 'Travel photograph - destination 4',
     title: 'Hidden Gems',
     category: 'Travel',
@@ -57,7 +37,7 @@ export const photos = [
   },
   {
     id: '5',
-    src: travelImage16,
+    src: '/images/travel/travelimage16.jpg',
     alt: 'Travel photograph - destination 5',
     title: 'Scenic Views',
     category: 'Travel',
@@ -66,7 +46,7 @@ export const photos = [
   },
   {
     id: '6',
-    src: travelImage20,
+    src: '/images/travel/travelimage20.jpg',
     alt: 'Travel photograph - destination 6',
     title: 'Cultural Moments',
     category: 'Travel',
@@ -75,7 +55,7 @@ export const photos = [
   },
   {
     id: '7',
-    src: travelImage22,
+    src: '/images/travel/travelimage22.jpg',
     alt: 'Travel photograph - destination 7',
     title: 'Captured Memories',
     category: 'Travel',
@@ -84,7 +64,7 @@ export const photos = [
   },
   {
     id: '8',
-    src: wallpaperImage2,
+    src: '/images/wallpaper/wallpaperimage2.jpg',
     alt: 'Wallpaper photograph 1',
     title: 'Abstract Beauty',
     category: 'Wallpapers',
@@ -93,7 +73,7 @@ export const photos = [
   },
   {
     id: '9',
-    src: wallpaperImage3,
+    src: '/images/wallpaper/wallpaperimage3.jpg',
     alt: 'Wallpaper photograph 2',
     title: 'Modern Art',
     category: 'Wallpapers',
@@ -102,7 +82,7 @@ export const photos = [
   },
   {
     id: '10',
-    src: wallpaperImage6,
+    src: '/images/wallpaper/wallpaperimage6.jpg',
     alt: 'Wallpaper photograph 3',
     title: 'Creative Design',
     category: 'Wallpapers',
@@ -111,7 +91,7 @@ export const photos = [
   },
   {
     id: '11',
-    src: wallpaperImage9,
+    src: '/images/wallpaper/wallpaperimage9.jpg',
     alt: 'Wallpaper photograph 4',
     title: 'Artistic Expression',
     category: 'Wallpapers',
@@ -120,7 +100,7 @@ export const photos = [
   },
   {
     id: '12',
-    src: wallpaperImage10,
+    src: '/images/wallpaper/wallpaperimage10.jpg',
     alt: 'Wallpaper photograph 5',
     title: 'Visual Harmony',
     category: 'Wallpapers',
@@ -129,7 +109,7 @@ export const photos = [
   },
   {
     id: '13',
-    src: wallpaperImage11,
+    src: '/images/wallpaper/wallpaperimage11.jpg',
     alt: 'Wallpaper photograph 6',
     title: 'Minimalist Style',
     category: 'Wallpapers',
@@ -138,7 +118,7 @@ export const photos = [
   },
   {
     id: '14',
-    src: wallpaperImage12,
+    src: '/images/wallpaper/wallpaperimage12.jpg',
     alt: 'Wallpaper photograph 7',
     title: 'Color Palette',
     category: 'Wallpapers',
@@ -147,7 +127,7 @@ export const photos = [
   },
   {
     id: '15',
-    src: wallpaperImage13,
+    src: '/images/wallpaper/wallpaperimage13.jpg',
     alt: 'Wallpaper photograph 8',
     title: 'Contemporary Art',
     category: 'Wallpapers',
@@ -156,7 +136,7 @@ export const photos = [
   },
   {
     id: '16',
-    src: wallpaperImage14,
+    src: '/images/wallpaper/wallpaperimage14.jpg',
     alt: 'Wallpaper photograph 9',
     title: 'Bold Composition',
     category: 'Wallpapers',
