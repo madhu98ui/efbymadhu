@@ -3,15 +3,18 @@ import '../pages/Portfolio.css'
 import Lightbox from '../components/Lightbox'
 import { Photo } from '../App'
 
-// List your actual image filenames here for each category
-const weddingFilenames: string[] = [
-  // Add your wedding image filenames here, e.g. 'wedding1.jpg', 'wedding2.jpg'
-];
+// Image filenames for each category
 const travelFilenames: string[] = [
-  'travelimage1.jpg','travelimage2.jpg','travelimage3.jpg','travelimage4.jpg','travelimage5.jpg','travelimage6.jpg','travelimage7.jpg','travelimage8.jpg','travelimage9.jpg','travelimage10.jpg','travelimage11.jpg','travelimage12.jpg','travelimage13.jpg','travelimage14.png','travelimage15.jpg','travelimage16.jpg','travelimage17.jpg','travelimage19.jpg','travelimage20.jpg','travelimage21.jpg','travelimage22.jpg',
+  'travelimage1.jpg','travelimage2.jpg','travelimage3.jpg','travelimage4.jpg','travelimage5.jpg',
+  'travelimage6.jpg','travelimage7.jpg','travelimage8.jpg','travelimage9.jpg','travelimage10.jpg',
+  'travelimage11.jpg','travelimage12.jpg','travelimage13.jpg','travelimage14.png','travelimage15.jpg',
+  'travelimage16.jpg','travelimage17.jpg','travelimage19.jpg','travelimage20.jpg','travelimage21.jpg','travelimage22.jpg',
 ];
+
 const wallpaperFilenames: string[] = [
-  'wallpaperimage1.jpg','wallpaperimage2.jpg','wallpaperimage3.jpg','wallpaperimage4.jpg','wallpaperimage5.jpg','wallpaperimage6.jpg','wallpaperimage7.png','wallpaperimage8.jpg','wallpaperimage9.jpg','wallpaperimage10.jpg','wallpaperimage11.jpg','wallpaperimage12.jpg','wallpaperimage13.jpg','wallpaperimage14.jpg',
+  'wallpaperimage1.jpg','wallpaperimage2.jpg','wallpaperimage3.jpg','wallpaperimage4.jpg','wallpaperimage5.jpg',
+  'wallpaperimage6.jpg','wallpaperimage7.png','wallpaperimage8.jpg','wallpaperimage9.jpg','wallpaperimage10.jpg',
+  'wallpaperimage11.jpg','wallpaperimage12.jpg','wallpaperimage13.jpg','wallpaperimage14.jpg',
 ];
 
 function makePhotoArray(filenames: string[], category: string): Photo[] {
@@ -27,14 +30,13 @@ function makePhotoArray(filenames: string[], category: string): Photo[] {
 }
 
 const portfolioPhotos: Photo[] = [
-  ...makePhotoArray(weddingFilenames, 'wedding'),
   ...makePhotoArray(travelFilenames, 'travel'),
   ...makePhotoArray(wallpaperFilenames, 'wallpaper'),
 ];
 
 export default function PortfolioPage() {
   const [lightboxPhoto, setLightboxPhoto] = useState<Photo | null>(null)
-  const [activeCategory, setActiveCategory] = useState<string>('weddings')
+  const [activeCategory, setActiveCategory] = useState<string>('travel')
   const [likedPhotos, setLikedPhotos] = useState<Set<string>>(new Set())
 
   const filteredPhotos = portfolioPhotos.filter((photo) => photo.category === activeCategory)
