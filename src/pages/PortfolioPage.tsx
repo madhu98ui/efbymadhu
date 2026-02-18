@@ -146,7 +146,7 @@ export default function PortfolioPage() {
           currentIndex={filteredPhotos.findIndex((p) => p.id === lightboxPhoto.id)}
           onNavigate={(index) => setLightboxPhoto(filteredPhotos[index])}
           likedPhotos={likedPhotos}
-          onToggleLike={(photoId) => toggleLike(photoId, { stopPropagation: () => {} } as any)}
+          onToggleLike={(photoId) => toggleLike(photoId)}
           onDownload={downloadImage}
         />
       )}
