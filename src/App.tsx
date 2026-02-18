@@ -8,6 +8,7 @@ import HomePage from './pages/HomePage'
 import ContactPage from './pages/ContactPage'
 import PortfolioPage from './pages/PortfolioPage'
 import ReviewsPage from './pages/ReviewsPage'
+import UpdatesPage from './pages/UpdatesPage'
 import { photos } from './data/photos'
 
 export type Photo = {
@@ -43,6 +44,7 @@ function App() {
           <Route path="/" element={<HomePage photos={photos} reviews={reviews} />} />
           <Route path="/portfolio" element={<PortfolioPage />} />
           <Route path="/reviews" element={<ReviewsPage reviews={reviews} onAddReview={handleAddReview} />} />
+          <Route path="/updates" element={<UpdatesPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
       </main>
