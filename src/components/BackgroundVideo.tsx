@@ -6,13 +6,12 @@ const VIDEO_SRC = '/background.mp4'
 
 export default function BackgroundVideo() {
   const videoRef = useRef<HTMLVideoElement>(null)
-  const [videoReady, setVideoReady] = useState(false)
   const [videoFailed, setVideoFailed] = useState(false)
 
   useEffect(() => {
     const video = videoRef.current
     if (!video) return
-    video.play().then(() => setVideoReady(true)).catch(() => setVideoFailed(true))
+    video.play().catch(() => setVideoFailed(true))
   }, [])
 
   return (
@@ -31,7 +30,6 @@ export default function BackgroundVideo() {
         playsInline
         preload="auto"
         onError={() => setVideoFailed(true)}
-        onCanPlay={() => setVideoReady(true)}
       />
     </div>
   )

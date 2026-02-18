@@ -20,7 +20,7 @@ export default function ReviewsPage({ reviews, onAddReview }: ReviewsPageProps) 
       onAddReview({
         name: formData.name,
         text: formData.text,
-        rating: parseInt(formData.rating),
+        rating: typeof formData.rating === 'string' ? parseInt(formData.rating) : formData.rating,
       })
       setFormData({ name: '', text: '', rating: 5 })
       setSubmitted(true)
