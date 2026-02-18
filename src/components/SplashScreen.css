@@ -39,14 +39,22 @@
 .splash-screen__logo-wrap {
   max-width: min(500px, 80vw);
   height: clamp(150px, 30vw, 300px);
-  overflow: hidden;
+  overflow: visible;
   animation: splash-fade-in 0.8s ease-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.5));
 }
 
 .splash-screen__logo {
-  width: 100%;
-  height: 100%;
+  width: 100% !important;
+  max-width: 100%;
+  height: auto;
+  display: block;
   object-fit: contain;
+  object-position: center;
+  line-height: 1;
 }
 
 @keyframes splash-fade-in {
