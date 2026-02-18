@@ -14,12 +14,13 @@ interface HomePageProps {
 
 export default function HomePage({ photos, reviews }: HomePageProps) {
   const [lightboxPhoto, setLightboxPhoto] = useState<Photo | null>(null)
-  const [showSplash, setShowSplash] = useState(false)
+  const [showSplash, setShowSplash] = useState(() => {
+    const hasVisited = sessionStorage.getItem('homePageVisited')
+    return !hasVisited
+  })
 
   useEffect(() => {
-    const hasVisited = sessionStorage.getItem('homePageVisited')
-    if (!hasVisited) {
-      setShowSplash(true)
+    if (showSplash) {
       sessionStorage.setItem('homePageVisited', 'true')
     }
   }, [])

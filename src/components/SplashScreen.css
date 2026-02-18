@@ -11,11 +11,13 @@
 .splash-screen--visible {
   opacity: 1;
   pointer-events: auto;
+  visibility: visible;
 }
 
 .splash-screen--hidden {
   opacity: 0;
   pointer-events: none;
+  visibility: hidden;
 }
 
 .splash-screen__overlay {
