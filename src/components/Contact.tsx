@@ -1,45 +1,57 @@
-import { useState } from 'react'
+import { useAppDispatch, useAppSelector } from '../redux/hooks'
+import {
+  updateFormData,
+  setSubmitting,
+  setSubmitSuccess,
+  setSubmitError,
+  resetForm,
+  setSubmittedAt,
+} from '../redux/slices/contactSlice'
 import './Contact.css'
 
 export default function Contact() {
-  const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' })
-  const [submitted, setSubmitted] = useState(false)
-  const [loading, setLoading] = useState(false)
-  const [error, setError] = useState('')
+  const dispatch = useAppDispatch()
+  const { formData, isSubmitting, submitSuccess, submitError } = useAppSelector(
+    (state) => state.contact
+  )
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }))
-    setError('')
+    dispatch(updateFormData({ [e.target.name]: e.target.value }))
+    dispatch(setSubmitError(null))
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setLoading(true)
-    setError('')
+    dispatch(setSubmitting(true))
+    dispatch(setSubmitError(null))
 
     try {
       const response = await fetch('http://localhost:3001/api/contact', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(formData),
       })
 
       if (!response.ok) {
         throw new Error('Failed to send message')
       }
 
-      setSubmitted(true)
-      setFormData({ name: '', email: '', phone: '', message: '' })
-      
+      dispatch(setSubmitSuccess(true))
+      dispatch(setSubmittedAt(new Date().toISOString()))
+      dispatch(resetForm())
+
       // Reset success message after 5 seconds
-      setTimeout(() => setSubmitted(false), 5000)
+      setTimeout(() => {
+        dispatch(setSubmitSuccess(false))
+        dispatch(setSubmittedAt(null))
+      }, 5000)
     } catch (err) {
-      setError('Failed to send message. Please try again or email directly.')
+      dispatch(setSubmitError('Failed to send message. Please try again or email directly.'))
       console.error('Error:', err)
     } finally {
-      setLoading(false)
+      dispatch(setSubmitting(false))
     }
   }
 
@@ -120,13 +132,13 @@ export default function Contact() {
                 placeholder="Tell us about your project or booking..."
               />
             </label>
-            <button type="submit" className="contact__submit" disabled={submitted || loading}>
-              {loading ? 'Sending...' : submitted ? 'Message sent' : 'Send message'}
+            <button type="submit" className="contact__submit" disabled={submitSuccess || isSubmitting}>
+              {isSubmitting ? 'Sending...' : submitSuccess ? 'Message sent' : 'Send message'}
             </button>
-            {error && <p className="contact__error">{error}</p>}
-            {submitted && (
+            {submitError && <p className="contact__error">{submitError}</p>}
+            {submitSuccess && (
               <p className="contact__thanks">
-                Thanks for reaching out. We’ll get back to you soon.
+                Thanks for reaching out. We'll get back to you soon.
               </p>
             )}
           </form>
