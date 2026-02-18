@@ -51,7 +51,6 @@
   object-fit: contain;
   object-position: center;
   line-height: 1;
-  mix-blend-mode: screen;
 }
 
 .hero__tagline {
