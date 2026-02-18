@@ -8,10 +8,10 @@ const weddingFilenames: string[] = [
   // Add your wedding image filenames here, e.g. 'wedding1.jpg', 'wedding2.jpg'
 ];
 const travelFilenames: string[] = [
-  'travel1.jpg','travel2.jpg','travel3.jpg','travel4.jpg','travel5.jpg','travel6.jpg','travel7.jpg','travel8.jpg','travel9.jpg','travel10.jpg','travel11.jpg','travel12.jpg','travel13.jpg','travel14.png','travel15.jpg','travel16.jpg','travel17.jpg','travel19.jpg','travel20.jpg','travel21.jpg','travel22.jpg',
+  'travelimage1.jpg','travelimage2.jpg','travelimage3.jpg','travelimage4.jpg','travelimage5.jpg','travelimage6.jpg','travelimage7.jpg','travelimage8.jpg','travelimage9.jpg','travelimage10.jpg','travelimage11.jpg','travelimage12.jpg','travelimage13.jpg','travelimage14.png','travelimage15.jpg','travelimage16.jpg','travelimage17.jpg','travelimage19.jpg','travelimage20.jpg','travelimage21.jpg','travelimage22.jpg',
 ];
 const wallpaperFilenames: string[] = [
-  'wallpaper1.jpg','wallpaper2.jpg','wallpaper3.jpg','wallpaper4.jpg','wallpaper5.jpg','wallpaper6.jpg','wallpaper7.png','wallpaper8.jpg','wallpaper9.jpg','wallpaper10.jpg','wallpaper11.jpg','wallpaper12.jpg','wallpaper13.jpg','wallpaper14.jpg',
+  'wallpaperimage1.jpg','wallpaperimage2.jpg','wallpaperimage3.jpg','wallpaperimage4.jpg','wallpaperimage5.jpg','wallpaperimage6.jpg','wallpaperimage7.png','wallpaperimage8.jpg','wallpaperimage9.jpg','wallpaperimage10.jpg','wallpaperimage11.jpg','wallpaperimage12.jpg','wallpaperimage13.jpg','wallpaperimage14.jpg',
 ];
 
 function makePhotoArray(filenames: string[], category: string): Photo[] {
