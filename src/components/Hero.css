@@ -1,6 +1,6 @@
 .hero {
   position: relative;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,8 +18,9 @@
   position: relative;
   z-index: 1;
   text-align: center;
-  padding: 2rem;
+  padding: 1rem;
   max-width: 100%;
+  pointer-events: auto;
 }
 
 .hero__label {
@@ -32,13 +33,14 @@
 
 .hero__logo-wrap {
   max-width: min(1040px, 95vw);
-  height: clamp(120px, 16vw, 200px);
+  height: clamp(80px, 12vw, 120px);
   overflow: visible;
-  margin: 0 auto 1rem;
+  margin: 0 auto 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
   filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.5));
+  pointer-events: none;
 }
 
 .hero__logo {
@@ -53,20 +55,22 @@
 
 .hero__tagline {
   color: var(--text-muted);
-  font-size: 1rem;
-  margin: 0 0 2rem;
+  font-size: 0.9rem;
+  margin: 0 0 1.5rem;
 }
 
 .hero__cta {
   display: inline-block;
   padding: 0.75rem 1.5rem;
   border: 1px solid var(--accent-dim);
+  background: transparent;
   color: var(--accent);
   font-size: 0.85rem;
   letter-spacing: 0.1em;
   transition: background 0.25s ease, color 0.25s ease;
   cursor: pointer;
-  text-decoration: none;
+  font-family: inherit;
+  pointer-events: auto;
 }
 
 .hero__cta:hover {

@@ -1,8 +1,15 @@
 import './Hero.css'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import Logo from './Logo'
 
 export default function Hero() {
+  const navigate = useNavigate()
+  
+  const handleGalleryClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    console.log('Button clicked!', e)
+    navigate('/portfolio')
+  }
+
   return (
     <section className="hero">
       <div className="hero__overlay" />
@@ -17,7 +24,13 @@ export default function Hero() {
         <p className="hero__tagline">
           Moments captured. Timeless frames.
         </p>
-        <Link to="/portfolio" className="hero__cta">View gallery</Link>
+        <button 
+          className="hero__cta" 
+          onClick={handleGalleryClick}
+          type="button"
+        >
+          View gallery
+        </button>
       </div>
     </section>
   )
