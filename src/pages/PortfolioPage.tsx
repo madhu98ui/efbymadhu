@@ -39,8 +39,7 @@ export default function PortfolioPage() {
 
   const filteredPhotos = portfolioPhotos.filter((photo) => photo.category === activeCategory)
 
-  const toggleLike = (photoId: string, e: React.MouseEvent) => {
-    e.stopPropagation()
+  const toggleLike = (photoId: string) => {
     setLikedPhotos((prev) => {
       const newSet = new Set(prev)
       if (newSet.has(photoId)) {
@@ -52,10 +51,7 @@ export default function PortfolioPage() {
     })
   }
 
-  const downloadImage = (photo: Photo, e: React.MouseEvent) => {
-    e.stopPropagation()
-    e.preventDefault()
-    
+  const downloadImage = (photo: Photo) => {
     try {
       // Get the file extension from the image source
       const extension = photo.src.split('.').pop()?.toLowerCase() || 'jpg'
@@ -109,14 +105,14 @@ export default function PortfolioPage() {
                 <div className="gallery__item-overlay">
                   <button
                     className={`gallery__like-btn ${likedPhotos.has(photo.id) ? 'liked' : ''}`}
-                    onClick={(e) => toggleLike(photo.id, e)}
+                    onClick={() => toggleLike(photo.id)}
                     title="Like this photo"
                   >
                     ❤️
                   </button>
                   <button
                     className="gallery__download-btn"
-                    onClick={(e) => downloadImage(photo, e)}
+                    onClick={() => downloadImage(photo)}
                     title="Download this photo"
                   >
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
