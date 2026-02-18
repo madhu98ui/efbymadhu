@@ -5,22 +5,20 @@ import { Photo } from '../App'
 
 // Image filenames for each category
 const travelFilenames: string[] = [
-  'travelimage1.jpg','travelimage2.jpg','travelimage3.jpg','travelimage4.jpg','travelimage5.jpg',
-  'travelimage6.jpg','travelimage7.jpg','travelimage8.jpg','travelimage9.jpg','travelimage10.jpg',
-  'travelimage11.jpg','travelimage12.jpg','travelimage13.jpg','travelimage14.png','travelimage15.jpg',
-  'travelimage16.jpg','travelimage17.jpg','travelimage19.jpg','travelimage20.jpg','travelimage21.jpg','travelimage22.jpg',
+  'travel3.jpg','travel4.jpg','travel6.jpg','travel7.jpg','travel16.jpg','travel17.jpg','travel20.jpg','travel22.jpg',
 ];
 
 const wallpaperFilenames: string[] = [
-  'wallpaperimage1.jpg','wallpaperimage2.jpg','wallpaperimage3.jpg','wallpaperimage4.jpg','wallpaperimage5.jpg',
-  'wallpaperimage6.jpg','wallpaperimage7.png','wallpaperimage8.jpg','wallpaperimage9.jpg','wallpaperimage10.jpg',
-  'wallpaperimage11.jpg','wallpaperimage12.jpg','wallpaperimage13.jpg','wallpaperimage14.jpg',
+  'wallpaper2.jpg','wallpaper3.jpg','wallpaper4.jpg','wallpaper5.jpg','wallpaper6.jpg',
+  'wallpaper8.jpg','wallpaper9.jpg','wallpaper10.jpg','wallpaper11.jpg','wallpaper12.jpg','wallpaper13.jpg','wallpaper14.jpg',
 ];
+
+const weddingFilenames: string[] = [];
 
 function makePhotoArray(filenames: string[], category: string): Photo[] {
   return filenames.map((filename, idx) => ({
     id: `${category}${idx+1}`,
-    src: `/images/${category}/${filename}`,
+    src: `/websiteimages/web${category}/${filename}`,
     alt: `${category.charAt(0).toUpperCase() + category.slice(1)} ${idx+1}`,
     title: `${category.charAt(0).toUpperCase() + category.slice(1)} ${idx+1}`,
     category: category === 'wallpaper' ? 'wallpapers' : category === 'wedding' ? 'weddings' : category,
@@ -32,6 +30,7 @@ function makePhotoArray(filenames: string[], category: string): Photo[] {
 const portfolioPhotos: Photo[] = [
   ...makePhotoArray(travelFilenames, 'travel'),
   ...makePhotoArray(wallpaperFilenames, 'wallpaper'),
+  ...makePhotoArray(weddingFilenames, 'wedding'),
 ];
 
 export default function PortfolioPage() {
