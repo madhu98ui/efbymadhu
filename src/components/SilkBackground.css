@@ -1,0 +1,14 @@
+.silk-bg {
+  position: fixed;
+  inset: -10%;
+  z-index: -1;
+  background: url(/background.png) center / 120% 120% no-repeat;
+  animation: silk-drift 100s ease-in-out infinite;
+  filter: url(#silk-wave);
+  will-change: transform;
+}
+
+@keyframes silk-drift {
+  0%, 100% { background-position: 50% 50%; }
+  50% { background-position: 55% 46%; }
+}
