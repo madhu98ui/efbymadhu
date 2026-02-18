@@ -1,9 +1,8 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Hero from '../components/Hero'
 import About from '../components/About'
 import Testimonials from '../components/Testimonials'
 import CallToAction from '../components/CallToAction'
-import SplashScreen from '../components/SplashScreen'
 import Lightbox from '../components/Lightbox'
 import { Photo } from '../App'
 
@@ -14,24 +13,9 @@ interface HomePageProps {
 
 export default function HomePage({ photos, reviews }: HomePageProps) {
   const [lightboxPhoto, setLightboxPhoto] = useState<Photo | null>(null)
-  const [showSplash, setShowSplash] = useState(() => {
-    const hasVisited = sessionStorage.getItem('homePageVisited')
-    return !hasVisited
-  })
-
-  useEffect(() => {
-    if (showSplash) {
-      sessionStorage.setItem('homePageVisited', 'true')
-    }
-  }, [])
-
-  const handleSplashComplete = () => {
-    setShowSplash(false)
-  }
 
   return (
     <>
-      {showSplash && <SplashScreen onComplete={handleSplashComplete} />}
       <Hero />
       <About />
       <Testimonials reviews={reviews} />

@@ -65,6 +65,8 @@
   font-size: 0.85rem;
   letter-spacing: 0.1em;
   transition: background 0.25s ease, color 0.25s ease;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .hero__cta:hover {
